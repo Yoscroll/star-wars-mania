@@ -3,12 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-	<div id="films">
-		
+	<div id="container">
+		<div id="content">
+			<div id="search">
+				<input type="text" id="input" value="" placeholder="Enter film #">
+				<button id="searchButt"onclick="getFilmData(input.value)">Get Film Data</button>
+			</div>
+			<div id="films">
+			</div>
+		</div>
 	</div>
-	<button onclick="getFilmData(1)">Get Film Data</button>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
