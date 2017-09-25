@@ -1,7 +1,9 @@
 let getFilmData = (id)=> $.ajax({
 	url: `https://swapi.co/api/films/${id}`,
 	type: 'GET',
-	success: (data) => (getCharacters(data),buildHtmlElements(data)),
+	success: (data) => (getCharacters(data),buildHtmlElements(data)),//200
+	error: alert("something went wrong"),
+  }
 });
 
 
@@ -34,12 +36,12 @@ function getCharacters(data){
 let buildHtmlElements = (responseData) =>(
 	console.log("building html..."),
 	$('#films').hide().prepend($(`<div class='loadedFilms'>
-		<h2 class="film-title">${responseData.title}</h2>
-		<p class="film-director"><b>Directed by:</b> ${responseData.director}</p>
-		<p class="film-episode"><b>Episode:</b> ${responseData.episode_id}</p>
-		<p class="film-producer"><b>Produced by:</b> ${responseData.producer}</p>
-		<p class="film-opening-crawl"><b>Description:</b> ${responseData.opening_crawl}</p>
-		<p class="film-release-date"><b>Relase date:</b> ${responseData.release_date}</p>
-		<p class="film-characters"><b>Characters: </b> ${charList}</p>
-		</div>`)).fadeIn(300)
-	)
+	<h2 class="film-title">${responseData.title}</h2>
+	<p class="film-director"><b>Directed by:</b> ${responseData.director}</p>
+	<p class="film-episode"><b>Episode:</b> ${responseData.episode_id}</p>
+	<p class="film-producer"><b>Produced by:</b> ${responseData.producer}</p>
+	<p class="film-opening-crawl"><b>Description:</b> ${responseData.opening_crawl}</p>
+	<p class="film-release-date"><b>Relase date:</b> ${responseData.release_date}</p>
+	<p class="film-characters"><b>Characters: </b> ${charList}</p>
+	</div>`)).fadeIn(300)
+);
